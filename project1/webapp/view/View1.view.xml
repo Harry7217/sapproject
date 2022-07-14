@@ -1,0 +1,100 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:newton="sap.ui.core" controllerName="project1.controller.View1" displayBlock="true">
+   <Shell id="_IDGenShell1">
+		<App id="_IDGenApp1">
+		<pages><Page xmlns="sap.m" id="_IDGenPage1">
+					<content>
+                         <form:SimpleForm editable="true" id="Myform1">
+                           <form:title>
+                                      <newton:Title id="_IDGenTitle11" text="ATM"/>                                      
+                            </form:title>
+                            <Button id="_IDGenButton13" text="Locate us" icon="sap-icon://functional-location" width="20%" press="newlogic1"/>
+                            <Button id="_IDGenButton14" text="Help" icon="sap-icon://sys-help" width="20%" press="newlogic2"/>
+                         </form:SimpleForm>
+                          <!--form:SimpleForm editable="true" id="Myform5">
+                          <Label id="_IDGenText1" text="Select your service:  "/>
+                         <Select xmlns="sap.m" id="select0" width="30%">
+                             <items>
+                                 <core:Item xmlns:core="sap.ui.core" key="item-key-1" text="withdrawal" id="item2"/>
+                                 <core:Item xmlns:core="sap.ui.core" key="item-key-2" text="Recharge your mobile" id="item3"/>
+                                 <core:Item xmlns:core="sap.ui.core" key="item-key-3" text="Deposit cash." id="item4"/>
+                                 <core:Item xmlns:core="sap.ui.core" key="item-key-4" text="Apply for personal loan" id="item5"/>
+                                 </items>        
+                         </Select> 
+                         <Label id="_IDGenLabel10" text=""/>
+                         <Button id="_IDGenButton6" enabled="true" text="submit" width="20%" press="newlogic6"/>
+                         </form:SimpleForm-->  
+                         <form:SimpleForm id="_IDGenSimpleForm2" editable="true">
+                         <Label id="_IDGenLabel17" text=""/>
+                            <Text id="_IDGenText1" text="Please select your service:"></Text>
+                           <Label id="_IDGenLabel10" text=""></Label>
+                           <Button id="_IDGenButton8" enabled="true" text="Withdrawal" width="20%" press="newlogic7"/>
+                           <Label id="_IDGenLabel11" text=""></Label>
+                           <Button id="_IDGenButton9" enabled="true" text="Pin generation" width="20%" press="newlogic8"/>
+                         </form:SimpleForm>
+                         <form:SimpleForm id="_IDGenSimpleForm1" editable="true"> 
+                         <Label id="_IDGenLabel12" text="Please enter your acc number"></Label>
+                         <Input id="_IDGenInput1" type="Number" width="30%"></Input>
+                         <Label id="_IDGenLabel13" text=""></Label>
+                         <Button id="_IDGenButton12" enabled="true" text="submit" width="20%" press="newlogic6"/>
+                         </form:SimpleForm>    
+                           <form:SimpleForm id="_IDGenSimpleForm3" editable="true"> 
+                           <Label id="_IDGenLabel14" text="Enter pin"/>
+                           <Input id="_IDGenInput2" type="Password" width="30%"/>
+                           <Label id="_IDGenLabel15" text="Confirm pin"/>
+                           <Input id="_IDGenInput3" type="Password" width="30%"/>
+                           <Label id="_IDGenLabel16" text=""/>
+                           <Button id="_IDGenButton15" enabled="true" text="submit" width="20%" press="newlogic9"/>
+                           </form:SimpleForm>   
+                            <form:SimpleForm editable="true" id="Myform">
+                           <form:title>
+                                      <newton:Title id="_IDGenTitle1" text="Enter your crediantials"/>
+                             </form:title>
+                           <Label id="_IDGenLabel1" text="Enter you name"/>
+                            <Input id="name" type="Text" width="30%"/>
+                            <Label id="_IDGenLabel2" text="Enter your card number"/>
+                            <Input id="number" type="Number" width="30%"/>
+                              <!--Button id="_IDGenButton2" enabled="true" text="submit" width="50%" press="newlogic"></Button-->
+                               <Label id="_IDGenLabel5" text=" "/>
+                               <Button id="_IDGenButton2" enabled="true" text="submit" width="20%" press="newlogic"/> 
+                              </form:SimpleForm>
+                            <form:SimpleForm editable="true" id="Myform2">
+                               <Label id="money" text="Enter the amount"/>
+                               <Input id="money1" type="Number" width="30%"/> 
+                               <Label id="pin" text="Enter the atm pin"/>
+                               <Input id="pin1" type="Password" width="30%"/> 
+                               <Label id="_IDGenLabel6" text=" "/>
+                               <Button id="_IDGenButton4" enabled="true" text="submit" width="20%" press="newlogic4"/>
+                            </form:SimpleForm>
+                            <form:SimpleForm editable="true" id="Myform3">
+                             <Label id="_IDGenLabel9" text="would u like to have reciept"></Label>
+                         <Select xmlns="sap.m" id="select1" width="30%">
+                             <items>
+                                 <core:Item xmlns:core="sap.ui.core" key="item-key-1" text="Yes" id="item6"/>
+                                 <core:Item xmlns:core="sap.ui.core" key="item-key-2" text="No" id="item7"/>
+                                </items>        
+                         </Select>
+                         <Label id="_IDGenLabel8" text=""></Label>
+                         <Button id="_IDGenButton5" enabled="true" text="submit" width="20%" press="newlogic3"/>   
+                          </form:SimpleForm>
+                          <form:SimpleForm editable="true" id="Myform4">
+                            <Label id="_IDGenLabel7" text=" Rating:"></Label>
+                            <ComboBox xmlns="sap.m" id="box0" width="30%">
+                        
+                                <items>
+                        
+                                    <core:Item xmlns:core="sap.ui.core" key="item-1-key" text="1" id="item01"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="item-1-key" text="2" id="item02"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="item-2-key" text="3" id="item1"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="item-1-key" text="4" id="item04"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="item-1-key" text="5" id="item05"/>
+                                    </items>
+                            </ComboBox>
+                            <Label id="wer" text=" "></Label>
+                            <Button id="_IDGenButton7" enabled="true" text="submit" width="25%" press="newlogic5"/>
+                        </form:SimpleForm>
+					</content>
+				</Page>
+		</pages>
+		</App>
+	</Shell>
+</mvc:View>

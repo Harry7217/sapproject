@@ -1,0 +1,92 @@
+_schema-version: "3.2"
+ID: LTI2022
+version: 0.0.2
+modules:
+- name: LTI2022-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: LTI2022-destination-service
+    parameters:
+      content-target: true
+  - name: LTI2022_html_repo_host
+    parameters:
+      service-key:
+        name: LTI2022_html_repo_host-key
+  - name: uaa_LTI2022
+    parameters:
+      service-key:
+        name: uaa_LTI2022-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: sap_LTI2022_html_repo_host
+          ServiceInstanceName: LTI2022-html5-app-host-service
+          ServiceKeyName: LTI2022_html_repo_host-key
+          sap.cloud.service: sap
+        - Authentication: OAuth2UserTokenExchange
+          Name: sap_uaa_LTI2022
+          ServiceInstanceName: LTI2022-xsuaa-service
+          ServiceKeyName: uaa_LTI2022-key
+          sap.cloud.service: sap
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: LTI2022-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: LTI2022_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - project1.zip
+      name: project1
+      target-path: resources/
+- name: project1
+  type: html5
+  path: project1
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: LTI2022-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: LTI2022-destination-service
+    service-plan: lite
+- name: LTI2022_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: LTI2022-html5-app-host-service
+    service-plan: app-host
+- name: uaa_LTI2022
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: LTI2022-xsuaa-service
+    service-plan: application
+parameters:
+  deploy_mode: html5-repo

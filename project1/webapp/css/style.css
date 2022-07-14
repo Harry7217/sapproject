@@ -1,0 +1,19 @@
+/* Enter your custom styles here */
+/*#__container1--RFLayout{
+      background-color:black;
+}*/
+#container-project1---View1--_IDGenPage1-cont{
+    background-color: coral;
+    background-image: url("pic3.webp");
+    background-repeat: no-repeat;
+  background-size: 1300px 1000px;
+}
+#container-project1---View1--_IDGenTitle11{
+      font-size:50px;
+      font-style: oblique;
+      text-align:center;
+      color: darkred;
+}
+#container-project1---View1--_IDGenButton14-inner{
+    float: right;
+}
